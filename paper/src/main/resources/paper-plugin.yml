@@ -1,0 +1,6 @@
+name: stellar_sync_paper
+version: '1.0-SNAPSHOT'
+main: dev.mnyacat.stellar_sync_paper.Stellar_sync_paper
+api-version: '1.21'
+prefix: StellarSync
+load: STARTUP

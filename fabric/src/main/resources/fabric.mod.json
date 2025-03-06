@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "stellar_sync_fabric",
+  "version": "${version}",
+  "name": "stellar-sync-fabric",
+  "description": "",
+  "authors": [
+    "MnyaCat"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/stellar_sync_fabric/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "dev.mnyacat.stellar_sync_fabric.StellarSyncFabric"
+    ]
+  },
+  "mixins": [
+    "stellar_sync_fabric.mixins.json",
+    {
+      "config": "stellar_sync_fabric.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

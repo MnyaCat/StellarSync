@@ -1,0 +1,12 @@
+config-version = "1.0"
+
+[database]
+jdbcUrl = ""
+username = ""
+password = ""
+maximumPoolSize = 5
+
+[sync_options]
+inventory = true
+ender_chest = true
+selected_slot = true
