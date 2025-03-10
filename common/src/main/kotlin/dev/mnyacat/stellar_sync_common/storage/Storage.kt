@@ -23,7 +23,7 @@ abstract class Storage<Player>(
         restoreRollback: Boolean = false
     ): Unit
 
-    abstract fun loadPlayerData(player: Player): Unit
+    abstract fun loadPlayerData(player: Player, isOnline: Boolean = true): Unit
     abstract fun getLevelName(player: Player): String
 
     protected fun delayTask(task: Runnable, delay: Long, timeUnit: TimeUnit) {

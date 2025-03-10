@@ -120,7 +120,7 @@ class FabricStorageWrapper(
 
     }
 
-    override fun loadPlayerData(player: ServerPlayerEntity) {
+    override fun loadPlayerData(player: ServerPlayerEntity, isOnline: Boolean) {
         if (!FabricHolder.pluginEnable) {
             player.sendMessage(
                 Text.literal("StellarSyncが無効化されているため, プレイヤーデータは復元されません: サーバー管理者に問い合わせてください.")
@@ -237,6 +237,7 @@ class FabricStorageWrapper(
                 player.networkHandler.sendPacket(UpdateSelectedSlotS2CPacket(selectedSlotData));
             }
             updateOnlineStatus(player, true, levelName)
+            updateOnlineStatus(player, isOnline, levelName)
             attempts.remove(uuid)
             player.sendMessage(
                 Text.literal("プレイヤーデータを復元しました: Database(${playerData.lastServer}) -> $levelName")
