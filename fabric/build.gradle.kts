@@ -65,6 +65,14 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-api:2.24.3")
     implementation("org.apache.logging.log4j:log4j-core:2.24.3")
     implementation(project(":common"))
+    include(project(":common"))
+    include("org.spongepowered:configurate-yaml:4.2.0")
+    include("org.spongepowered:configurate-extra-kotlin:4.2.0")
+    include("org.spongepowered:configurate-core:4.2.0")
+    include("net.kyori:option:1.1.0")
+    include("io.leangen.geantyref:geantyref:2.0.0")
+    include("com.zaxxer:HikariCP:6.2.1")
+    include("org.postgresql:postgresql:42.7.4")
 
 }
 
