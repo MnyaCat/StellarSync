@@ -53,7 +53,7 @@ class FabricStorageWrapper(
             logger.warn("Synchronization skipped. StellarSync is disabled.")
             return
         }
-        // TODO: Configで同期するか変更できるようにする
+        val syncOptions = FabricHolder.configManager.config.syncOptions
         val nbtInventory = getNbtInventory(player)
         val enderChest = getNbtEnderChest(player)
         val selectedSlot = player.inventory.selectedSlot
@@ -90,11 +90,12 @@ class FabricStorageWrapper(
             }
             savePlayerDataToDatabase(
                 uuid,
-                nbtInventory.toString(),
-                enderChest.toString(),
-                selectedSlot,
+                if (syncOptions.inventory) nbtInventory.toString() else null,
+                if (syncOptions.enderChest) enderChest.toString() else null,
+                if (syncOptions.selectedSlot) selectedSlot else null,
                 isOnline,
-                levelName
+                levelName,
+                FabricHolder.configManager.config.syncOptions
             )
             attempts.remove(uuid)
             if (shouldSendFeedback) {
@@ -220,23 +221,29 @@ class FabricStorageWrapper(
                     return
                 }
             }
-            // TODO: Configで同期するか変更できるようにする
-            val inventoryData = playerData.inventory
-            inventoryData?.let {
-                val nbtInventory = parseNbtString(inventoryData)
-                player.inventory.readNbt(nbtInventory)
+            logger.debug(playerData.enderChest?.javaClass?.name)
+            val syncOptions = FabricHolder.configManager.config.syncOptions
+            if (syncOptions.inventory) {
+                val inventoryData = playerData.inventory
+                inventoryData?.let {
+                    val nbtInventory = parseNbtString(inventoryData)
+                    player.inventory.readNbt(nbtInventory)
+                }
             }
-            val enderChestData = playerData.enderChest
-            enderChestData?.let {
-                val nbtEnderChest = parseNbtString(enderChestData)
-                player.enderChestInventory.readNbtList(nbtEnderChest, player.server.registryManager)
+            if (syncOptions.enderChest) {
+                val enderChestData = playerData.enderChest
+                enderChestData?.let {
+                    val nbtEnderChest = parseNbtString(enderChestData)
+                    player.enderChestInventory.readNbtList(nbtEnderChest, player.server.registryManager)
+                }
             }
-            val selectedSlotData = playerData.selectedSlot
-            selectedSlotData?.let {
-                player.inventory.selectedSlot = selectedSlotData
-                player.networkHandler.sendPacket(UpdateSelectedSlotS2CPacket(selectedSlotData));
+            if (syncOptions.selectedSlot) {
+                val selectedSlotData = playerData.selectedSlot
+                selectedSlotData?.let {
+                    player.inventory.selectedSlot = selectedSlotData
+                    player.networkHandler.sendPacket(UpdateSelectedSlotS2CPacket(selectedSlotData));
+                }
             }
-            updateOnlineStatus(player, true, levelName)
             updateOnlineStatus(player, isOnline, levelName)
             attempts.remove(uuid)
             player.sendMessage(

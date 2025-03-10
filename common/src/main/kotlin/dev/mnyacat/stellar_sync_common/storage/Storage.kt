@@ -1,5 +1,6 @@
 package dev.mnyacat.stellar_sync_common.storage
 
+import dev.mnyacat.stellar_sync_common.config.Config
 import dev.mnyacat.stellar_sync_common.model.PlayerData
 import org.apache.logging.log4j.Logger
 import java.sql.SQLException
@@ -41,7 +42,7 @@ abstract class Storage<Player>(
         lastServer: String
     ) {
         val insertSQL = """
-            INSERT INTO player_data (uuid, inventory,  ender_chest, selected_slot, is_online, last_server) VALUES (?, ?, ?, ?, ?, ?);
+            INSERT INTO player_data (uuid, inventory, ender_chest, selected_slot, is_online, last_server) VALUES (?, ?, ?, ?, ?, ?);
         """.trimIndent()
         connectionManager.getConnection().use { connection ->
             connection.prepareStatement(insertSQL).use { statement ->
@@ -66,15 +67,19 @@ abstract class Storage<Player>(
         enderChest: String?,
         selectedSlot: Int?,
         isOnline: Boolean,
-        lastServer: String
+        lastServer: String,
+        syncOptions: Config.Companion.SyncOptions
     ) {
+        val syncInventory = syncOptions.inventory
+        val syncEnderChest = syncOptions.enderChest
+        val syncSelectedSlot = syncOptions.selectedSlot
         val upsertSQL = """
-            INSERT INTO player_data (uuid, inventory,  ender_chest, selected_slot, is_online, last_server, has_crashed, needs_rollback, rollback_server) VALUES (?, ?, ?, ?, ?, ?, false, false, NULL)
+            INSERT INTO player_data (uuid, ${if (syncInventory) "inventory, " else ""}${if (syncEnderChest) "ender_chest, " else ""}${if (syncSelectedSlot) "selected_slot, " else ""}is_online, last_server, has_crashed, needs_rollback, rollback_server) VALUES (?, ${if (syncInventory) "?, " else ""}${if (syncEnderChest) "?, " else ""}${if (syncSelectedSlot) "?, " else ""}?, ?, false, false, NULL)
             ON CONFLICT (uuid)
             DO UPDATE SET
-                inventory = EXCLUDED.inventory,
-                ender_chest = EXCLUDED.ender_chest,
-                selected_slot = EXCLUDED.selected_slot,
+                ${if (syncInventory) "inventory = EXCLUDED.inventory," else ""}
+                ${if (syncEnderChest) "ender_chest = EXCLUDED.ender_chest," else ""}
+                ${if (syncSelectedSlot) "selected_slot = EXCLUDED.selected_slot," else ""}
                 is_online = EXCLUDED.is_online,
                 last_server = EXCLUDED.last_server,
                 has_crashed = EXCLUDED.has_crashed,
@@ -82,15 +87,31 @@ abstract class Storage<Player>(
                 rollback_server = EXCLUDED.rollback_server,
                 updated_at = CURRENT_TIMESTAMP;
         """.trimIndent()
+        var parameterIndex = 1
         connectionManager.getConnection().use { connection ->
             connection.prepareStatement(upsertSQL).use { statement ->
                 with(statement) {
-                    setObject(1, uuid)
-                    inventory?.let { setString(2, inventory) } ?: run { setNull(2, java.sql.Types.NULL) }
-                    enderChest?.let { setString(3, enderChest) } ?: run { setNull(3, java.sql.Types.NULL) }
-                    selectedSlot?.let { setInt(4, it) } ?: run { setNull(4, java.sql.Types.NULL) }
-                    setBoolean(5, isOnline)
-                    setString(6, lastServer)
+                    setObject(parameterIndex++, uuid)
+                    if (syncInventory) inventory?.let { setString(parameterIndex++, inventory) } ?: run {
+                        setNull(
+                            parameterIndex++,
+                            java.sql.Types.NULL
+                        )
+                    }
+                    if (syncEnderChest) enderChest?.let { setString(parameterIndex++, enderChest) } ?: run {
+                        setNull(
+                            parameterIndex++,
+                            java.sql.Types.NULL
+                        )
+                    }
+                    if (syncSelectedSlot) selectedSlot?.let { setInt(parameterIndex++, it) } ?: run {
+                        setNull(
+                            parameterIndex++,
+                            java.sql.Types.NULL
+                        )
+                    }
+                    setBoolean(parameterIndex++, isOnline)
+                    setString(parameterIndex++, lastServer)
                 }
                 logger.debug("save player data: {}", statement)
                 statement.executeUpdate()

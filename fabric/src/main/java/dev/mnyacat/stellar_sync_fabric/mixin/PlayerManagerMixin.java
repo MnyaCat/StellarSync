@@ -22,7 +22,7 @@ public class PlayerManagerMixin {
             player.sendMessage(Text.literal("StellarSyncが無効化されているため, プレイヤーデータの同期が行われません: サーバー管理者に問い合わせてください.").formatted(Formatting.RED));
             return;
         }
-        FabricHolder.INSTANCE.getStorageWrapper().loadPlayerData(player);
+        FabricHolder.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
 
     }
 }
