@@ -75,7 +75,8 @@ class FabricStorageWrapper(
                 }
                 logger.warn("Player data synchronization for ${player.name} was not performed because ${playerData.rollbackServer} was rolled back. Synchronization will not resume until you connect to this server.")
                 return
-            } else if (!restoreCrash && playerData.hasCrashed) {
+            }
+            if (!restoreCrash && playerData.hasCrashed) {
                 if (shouldSendFeedback) {
                     player.sendMessage(
                         Text.literal("前回プレイヤーデータの保存に失敗しています:")
