@@ -243,7 +243,7 @@ class FabricStorageWrapper(
                 val selectedSlotData = playerData.selectedSlot
                 selectedSlotData?.let {
                     player.inventory.selectedSlot = selectedSlotData
-                    player.networkHandler.sendPacket(UpdateSelectedSlotS2CPacket(selectedSlotData));
+                    player.networkHandler.sendPacket(UpdateSelectedSlotS2CPacket(selectedSlotData))
                 }
             }
             updateOnlineStatus(player, isOnline, levelName)
