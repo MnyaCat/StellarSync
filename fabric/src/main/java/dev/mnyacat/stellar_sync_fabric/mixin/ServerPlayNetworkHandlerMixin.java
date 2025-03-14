@@ -1,6 +1,6 @@
 package dev.mnyacat.stellar_sync_fabric.mixin;
 
-import dev.mnyacat.stellar_sync_fabric.model.FabricHolder;
+import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext;
 import net.minecraft.network.DisconnectionInfo;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,7 +22,7 @@ public abstract class ServerPlayNetworkHandlerMixin {
     private void onDisconnected(DisconnectionInfo info, CallbackInfo ci) {
         // 切断時の保存処理
         if (this.getPlayer() != null) {
-            FabricHolder.INSTANCE.getStorageWrapper().savePlayerData(player, false, false, false, false);
+            FabricGlobalContext.INSTANCE.getStorageWrapper().savePlayerData(player, false, false, false, false);
         }
     }
 }

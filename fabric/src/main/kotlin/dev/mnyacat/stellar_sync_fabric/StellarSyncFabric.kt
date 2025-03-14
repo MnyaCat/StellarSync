@@ -6,7 +6,7 @@ import dev.mnyacat.stellar_sync_common.storage.DatabaseInitializer
 import dev.mnyacat.stellar_sync_common.storage.DatabaseMigrator
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncCommands
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncDebugCommands
-import dev.mnyacat.stellar_sync_fabric.model.FabricHolder
+import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext
 import dev.mnyacat.stellar_sync_fabric.storage.FabricStorageWrapper
 import net.fabricmc.api.ModInitializer
 import org.apache.logging.log4j.LogManager
@@ -23,7 +23,7 @@ class StellarSyncFabric : ModInitializer {
         val configFilePath = "config/StellarSync.yaml"
         val configFile = File(configFilePath)
         val configFileExists = configFile.isFile && configFile.exists()
-        FabricHolder.configManager = ConfigManager(Paths.get(configFilePath))
+        FabricGlobalContext.configManager = ConfigManager(Paths.get(configFilePath))
         // TODO: configファイルが無かった場合、上でデフォルトの設定が生成されるのでMODを無効化する: サーバー全体へ通知
         // 無効化されている場合はユーザーへ通知する
         // セーブ、ロードなどの同期処理はこのフラグで機能をON/OFF
@@ -32,8 +32,8 @@ class StellarSyncFabric : ModInitializer {
             logger.warn("Default configuration generated because the configuration file was not found. Please modify the configuration file and restart the server.")
             return
         }
-        val config = FabricHolder.configManager.config
-        FabricHolder.logger = logger
+        val config = FabricGlobalContext.configManager.config
+        FabricGlobalContext.logger = logger
         val connectionManager: ConnectionManager
         try {
             connectionManager = ConnectionManager(
@@ -47,7 +47,7 @@ class StellarSyncFabric : ModInitializer {
             logger.error("StellarSync disabled due to failure to connect to the database.: {}", e.message)
             return
         }
-        FabricHolder.storageWrapper = FabricStorageWrapper(
+        FabricGlobalContext.storageWrapper = FabricStorageWrapper(
             logger,
             connectionManager,
             5,
@@ -64,7 +64,7 @@ class StellarSyncFabric : ModInitializer {
         val commands = StellarSyncCommands(logger)
         commands.onInitialize()
         // MODを有効化
-        FabricHolder.pluginEnable = true
+        FabricGlobalContext.pluginEnable = true
     }
 }
 

@@ -3,7 +3,7 @@ package dev.mnyacat.stellar_sync_fabric.storage
 import dev.mnyacat.stellar_sync_common.model.PlayerData
 import dev.mnyacat.stellar_sync_common.storage.ConnectionManager
 import dev.mnyacat.stellar_sync_common.storage.Storage
-import dev.mnyacat.stellar_sync_fabric.model.FabricHolder
+import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext
 import dev.mnyacat.stellar_sync_fabric.parseNbtString
 import net.minecraft.nbt.NbtList
 import net.minecraft.network.packet.s2c.play.UpdateSelectedSlotS2CPacket
@@ -43,7 +43,7 @@ class FabricStorageWrapper(
         restoreCrash: Boolean,
         restoreRollback: Boolean,
     ) {
-        if (!FabricHolder.pluginEnable) {
+        if (!FabricGlobalContext.pluginEnable) {
             if (shouldSendFeedback) {
                 player.sendMessage(
                     Text.literal("StellarSyncが無効化されているため, プレイヤーデータは保存されません: サーバー管理者に問い合わせてください.")
@@ -53,7 +53,7 @@ class FabricStorageWrapper(
             logger.warn("Synchronization skipped. StellarSync is disabled.")
             return
         }
-        val syncOptions = FabricHolder.configManager.config.syncOptions
+        val syncOptions = FabricGlobalContext.configManager.config.syncOptions
         val nbtInventory = getNbtInventory(player)
         val enderChest = getNbtEnderChest(player)
         val selectedSlot = player.inventory.selectedSlot
@@ -97,7 +97,7 @@ class FabricStorageWrapper(
                 if (syncOptions.selectedSlot) selectedSlot else null,
                 isOnline,
                 levelName,
-                FabricHolder.configManager.config.syncOptions
+                FabricGlobalContext.configManager.config.syncOptions
             )
             attempts.remove(uuid)
             if (shouldSendFeedback) {
@@ -124,7 +124,7 @@ class FabricStorageWrapper(
     }
 
     override fun loadPlayerData(player: ServerPlayerEntity, isOnline: Boolean) {
-        if (!FabricHolder.pluginEnable) {
+        if (!FabricGlobalContext.pluginEnable) {
             player.sendMessage(
                 Text.literal("StellarSyncが無効化されているため, プレイヤーデータは復元されません: サーバー管理者に問い合わせてください.")
                     .formatted(Formatting.RED)
@@ -224,7 +224,7 @@ class FabricStorageWrapper(
                 }
             }
             logger.debug(playerData.enderChest?.javaClass?.name)
-            val syncOptions = FabricHolder.configManager.config.syncOptions
+            val syncOptions = FabricGlobalContext.configManager.config.syncOptions
             if (syncOptions.inventory) {
                 val inventoryData = playerData.inventory
                 inventoryData?.let {

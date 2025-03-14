@@ -1,6 +1,6 @@
 package dev.mnyacat.stellar_sync_fabric.mixin;
 
-import dev.mnyacat.stellar_sync_fabric.model.FabricHolder;
+import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ConnectedClientData;
@@ -18,11 +18,11 @@ public class PlayerManagerMixin {
     @Inject(method = "onPlayerConnect", at = @At("TAIL"))
     private void onPlayerJoin(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci) {
         // 接続時のロード処理
-        if (!FabricHolder.INSTANCE.getPluginEnable()) {
+        if (!FabricGlobalContext.INSTANCE.getPluginEnable()) {
             player.sendMessage(Text.literal("StellarSyncが無効化されているため, プレイヤーデータの同期が行われません: サーバー管理者に問い合わせてください.").formatted(Formatting.RED));
             return;
         }
-        FabricHolder.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
+        FabricGlobalContext.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
 
     }
 }
