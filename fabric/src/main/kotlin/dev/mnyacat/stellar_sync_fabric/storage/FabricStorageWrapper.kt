@@ -87,6 +87,7 @@ class FabricStorageWrapper(
                     )
                 }
                 logger.warn("Player data synchronization for ${player.name} was not performed: because the inventory could not be saved properly on ${playerData.lastServer} last time, synchronization will not resume until you connect to this server.")
+                return
             }
             savePlayerDataToDatabase(
                 uuid,
