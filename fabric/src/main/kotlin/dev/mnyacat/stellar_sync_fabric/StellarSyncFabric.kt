@@ -7,6 +7,7 @@ import dev.mnyacat.stellar_sync_common.storage.DatabaseMigrator
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncCommands
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncDebugCommands
 import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext
+import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext
 import dev.mnyacat.stellar_sync_fabric.storage.FabricStorageWrapper
 import net.fabricmc.api.ModInitializer
 import org.apache.logging.log4j.LogManager
@@ -47,7 +48,7 @@ class StellarSyncFabric : ModInitializer {
             logger.error("StellarSync disabled due to failure to connect to the database.: {}", e.message)
             return
         }
-        FabricGlobalContext.storageWrapper = FabricStorageWrapper(
+        FabricStorageContext.storageWrapper = FabricStorageWrapper(
             logger,
             connectionManager,
             5,

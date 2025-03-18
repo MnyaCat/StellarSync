@@ -6,6 +6,5 @@ import org.apache.logging.log4j.Logger
 abstract class GlobalContext<S> {
     var pluginEnable = false
     lateinit var logger: Logger
-    abstract var storageWrapper: S
     lateinit var configManager: ConfigManager
 }

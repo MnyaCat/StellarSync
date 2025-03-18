@@ -6,6 +6,7 @@ import com.mojang.brigadier.arguments.StringArgumentType
 import com.mojang.brigadier.context.CommandContext
 import com.mojang.brigadier.exceptions.CommandSyntaxException
 import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext
+import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.minecraft.command.CommandRegistryAccess
@@ -20,7 +21,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
     private fun executeSaveCommand(context: CommandContext<ServerCommandSource>): Int {
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.savePlayerData(player, isOnline = false)
+            FabricStorageContext.storageWrapper.savePlayerData(player, isOnline = false)
             return 1
         } catch (e: CommandSyntaxException) {
             context.source.sendFeedback(
@@ -34,7 +35,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
     private fun executeLoadCommand(context: CommandContext<ServerCommandSource>): Int {
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.loadPlayerData(player)
+            FabricStorageContext.storageWrapper.loadPlayerData(player)
             return 1
         } catch (e: CommandSyntaxException) {
             context.source.sendFeedback(
@@ -51,7 +52,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val needsRollback = BoolArgumentType.getBool(context, "needs_rollback")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateFlags(player, isOnline, hasCrashed, needsRollback)
+            FabricStorageContext.storageWrapper.updateFlags(player, isOnline, hasCrashed, needsRollback)
             context.source.sendFeedback(
                 { Text.literal("update: is_online = $isOnline, has_crashed = $hasCrashed") },
                 false
@@ -70,7 +71,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val isOnline = BoolArgumentType.getBool(context, "is_online")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateOnlineFlag(player, isOnline)
+            FabricStorageContext.storageWrapper.updateOnlineFlag(player, isOnline)
             context.source.sendFeedback(
                 { Text.literal("update: is_online = $isOnline") },
                 false
@@ -89,7 +90,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val lastServer = StringArgumentType.getString(context, "last_server")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateLastServer(player, lastServer)
+            FabricStorageContext.storageWrapper.updateLastServer(player, lastServer)
             context.source.sendFeedback(
                 { Text.literal("update: last_server = $lastServer") },
                 false
@@ -109,7 +110,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val lastServer = StringArgumentType.getString(context, "last_server")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateOnlineStatus(player, isOnline, lastServer)
+            FabricStorageContext.storageWrapper.updateOnlineStatus(player, isOnline, lastServer)
             context.source.sendFeedback(
                 { Text.literal("update: is_online = $isOnline, last_server = $lastServer") },
                 false
@@ -128,7 +129,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val hasCrashed = BoolArgumentType.getBool(context, "has_crashed")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateCrashFlag(player, hasCrashed)
+            FabricStorageContext.storageWrapper.updateCrashFlag(player, hasCrashed)
             context.source.sendFeedback(
                 { Text.literal("update: has_crashed = $hasCrashed") },
                 false
@@ -147,7 +148,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val needsRollback = BoolArgumentType.getBool(context, "needs_rollback")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateRollbackFlag(player, needsRollback)
+            FabricStorageContext.storageWrapper.updateRollbackFlag(player, needsRollback)
             context.source.sendFeedback(
                 { Text.literal("update: needs_rollback = $needsRollback") },
                 false
@@ -166,7 +167,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val rollbackServer = StringArgumentType.getString(context, "rollback_server")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateRollbackServer(player, rollbackServer)
+            FabricStorageContext.storageWrapper.updateRollbackServer(player, rollbackServer)
             context.source.sendFeedback(
                 { Text.literal("update: rollback_server = $rollbackServer") },
                 false
@@ -186,7 +187,7 @@ class StellarSyncDebugCommands(private val logger: Logger) : ModInitializer {
         val rollbackServer = StringArgumentType.getString(context, "rollback_server")
         try {
             val player = context.source.playerOrThrow
-            FabricGlobalContext.storageWrapper.updateRollbackStatus(player, needsRollback, rollbackServer)
+            FabricStorageContext.storageWrapper.updateRollbackStatus(player, needsRollback, rollbackServer)
             context.source.sendFeedback(
                 { Text.literal("update: needs_rollback = $needsRollback, rollback_server = $rollbackServer") },
                 false

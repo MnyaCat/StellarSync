@@ -1,6 +1,7 @@
 package dev.mnyacat.stellar_sync_fabric.mixin;
 
 import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext;
+import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ConnectedClientData;
@@ -22,7 +23,7 @@ public class PlayerManagerMixin {
             player.sendMessage(Text.literal("StellarSyncが無効化されているため, プレイヤーデータの同期が行われません: サーバー管理者に問い合わせてください.").formatted(Formatting.RED));
             return;
         }
-        FabricGlobalContext.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
+        FabricStorageContext.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
 
     }
 }

@@ -1,6 +1,7 @@
 package dev.mnyacat.stellar_sync_fabric.mixin;
 
 import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext;
+import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,7 +24,7 @@ public class MinecraftServerMixin {
             MinecraftServer server = (MinecraftServer) (Object) this;
             Collection<ServerPlayerEntity> collection = server.getPlayerManager().getPlayerList();
             for (ServerPlayerEntity player : collection) {
-                FabricGlobalContext.INSTANCE.getStorageWrapper().savePlayerData(player, false, false, false, false);
+                FabricStorageContext.INSTANCE.getStorageWrapper().savePlayerData(player, false, false, false, false);
             }
         }
         flag = false;
