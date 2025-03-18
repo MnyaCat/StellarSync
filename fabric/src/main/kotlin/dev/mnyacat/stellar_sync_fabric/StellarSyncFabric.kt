@@ -59,6 +59,7 @@ class StellarSyncFabric : ModInitializer {
         )
         DatabaseInitializer.initialize(logger, connectionManager)
         DatabaseMigrator.migrate(logger, connectionManager)
+        FabricGlobalContext.messageFormatter = FabricMessageFormatter()
         // register command
         val debugCommands =
             StellarSyncDebugCommands(logger)
