@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="change: プレイヤーデータの保存、読み込み処理を共通化">
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricStorageContext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt" afterDir="false" />
+    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="add: messageFormatterの初期化処理を追加">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/paper/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
@@ -108,26 +93,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.StellarSync [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.StellarSync [runServer].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fabric&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.StellarSync [build].executor": "Run",
+    "Gradle.StellarSync [runServer].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "paper",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" side_tool="true" />
@@ -140,14 +125,14 @@
       <window_info id="Structure" order="2" side_tool="true" weight="0.5289062" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Find Mixins" />
       <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.2999031" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.2999031" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.2999031" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.2999031" />
       <window_info anchor="bottom" id="Run" order="4" weight="0.2999031" />
       <window_info anchor="bottom" id="Duplicates" order="5" weight="0.3302619" />
       <window_info anchor="bottom" id="Services" order="6" weight="0.314438" />
@@ -211,7 +196,7 @@
       <workItem from="1742048953960" duration="6521000" />
       <workItem from="1742113689509" duration="22151000" />
       <workItem from="1742222854359" duration="3740000" />
-      <workItem from="1742310405444" duration="990000" />
+      <workItem from="1742310405444" duration="1396000" />
     </task>
     <task id="LOCAL-00001" summary="change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更">
       <option name="closed" value="true" />
@@ -229,16 +214,54 @@
       <option name="project" value="LOCAL" />
       <updated>1742311392857</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add: メッセージの共通化用モデルを追加">
+      <option name="closed" value="true" />
+      <created>1742311480172</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311480172</updated>
+    </task>
+    <task id="LOCAL-00004" summary="others: モジュール構造などを変更">
+      <option name="closed" value="true" />
+      <created>1742311625744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311625744</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add: messageFormatterの初期化処理を追加">
+      <option name="closed" value="true" />
+      <created>1742311662010</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311662010</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更" />
     <MESSAGE value="change: プレイヤーデータの保存、読み込み処理を共通化" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: プレイヤーデータの保存、読み込み処理を共通化" />
+    <MESSAGE value="add: メッセージの共通化用モデルを追加" />
+    <MESSAGE value="others: モジュール構造などを変更" />
+    <MESSAGE value="add: messageFormatterの初期化処理を追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: messageFormatterの初期化処理を追加" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
