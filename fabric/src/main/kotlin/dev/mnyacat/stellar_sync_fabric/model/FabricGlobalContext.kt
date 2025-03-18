@@ -1,8 +1,6 @@
 package dev.mnyacat.stellar_sync_fabric.model
 
 import dev.mnyacat.stellar_sync_common.model.GlobalContext
-import dev.mnyacat.stellar_sync_fabric.storage.FabricStorageWrapper
+import net.minecraft.text.Text
 
-object FabricGlobalContext : GlobalContext<FabricStorageWrapper>() {
-    override lateinit var storageWrapper: FabricStorageWrapper
-}
+object FabricGlobalContext : GlobalContext<Text>()

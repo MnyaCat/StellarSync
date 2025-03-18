@@ -16,17 +16,6 @@ abstract class Storage<Player>(
     protected val scheduler: ScheduledExecutorService,
     protected val attempts: MutableMap<UUID, Int>
 ) {
-    abstract fun savePlayerData(
-        player: Player,
-        isOnline: Boolean,
-        shouldSendFeedback: Boolean = true,
-        restoreCrash: Boolean = false,
-        restoreRollback: Boolean = false
-    ): Unit
-
-    abstract fun loadPlayerData(player: Player, isOnline: Boolean = true): Unit
-    abstract fun getLevelName(player: Player): String
-
     protected fun delayTask(task: Runnable, delay: Long, timeUnit: TimeUnit) {
         scheduler.schedule(task, delay, timeUnit)
     }
@@ -289,7 +278,7 @@ abstract class Storage<Player>(
     }
 
     @Throws(SQLException::class)
-    fun updateAllPlayersRollbackStatus(needsRollback: Boolean, rollbackServer: String?) {
+    protected open fun updateAllPlayersRollbackStatus(needsRollback: Boolean, rollbackServer: String?) {
         val updateSQL = """
             UPDATE player_data SET needs_rollback = ?, rollback_server = ?, updated_at = CURRENT_TIMESTAMP;
         """.trimIndent()

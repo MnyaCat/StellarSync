@@ -7,6 +7,7 @@ import dev.mnyacat.stellar_sync_common.storage.DatabaseMigrator
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncCommands
 import dev.mnyacat.stellar_sync_fabric.command.StellarSyncDebugCommands
 import dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext
+import dev.mnyacat.stellar_sync_fabric.model.FabricMessageFormatter
 import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext
 import dev.mnyacat.stellar_sync_fabric.storage.FabricStorageWrapper
 import net.fabricmc.api.ModInitializer
