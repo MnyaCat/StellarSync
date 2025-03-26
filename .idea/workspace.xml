@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="add: messageFormatterの初期化処理を追加">
+    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="rename: メインクラスの名前を変更">
+      <change afterPath="$PROJECT_DIR$/paper/src/main/kotlin/dev/mnyacat/stellar_sync_paper/Util.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/ConnectionManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/ConnectionManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/paper/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/src/main/kotlin/dev/mnyacat/stellar_sync_paper/StellarSyncPaper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/paper/src/main/kotlin/dev/mnyacat/stellar_sync_paper/StellarSyncPaper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper/src/main/resources/paper-plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/paper/src/main/resources/paper-plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/paper">
           <activation />
         </task>
         <projects_view>
@@ -82,7 +85,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -93,26 +96,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.StellarSync [build].executor": "Run",
-    "Gradle.StellarSync [runServer].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "paper",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.StellarSync [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StellarSync [runServer].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;paper&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" side_tool="true" />
@@ -120,9 +123,9 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.32994792" />
-      <window_info active="true" id="Commit" order="1" visible="true" weight="0.23723958" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.5289062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23828125" />
+      <window_info id="Commit" order="1" weight="0.23723958" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.33046874" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Profiler" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" />
@@ -131,23 +134,23 @@
       <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.2999031" />
       <window_info anchor="bottom" id="Problems" order="1" />
-      <window_info anchor="bottom" id="Problems View" order="2" weight="0.2999031" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.2999031" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.2999031" />
+      <window_info anchor="bottom" id="Problems View" order="2" weight="0.34772065" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.34772065" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.3473837" />
       <window_info anchor="bottom" id="Duplicates" order="5" weight="0.3302619" />
-      <window_info anchor="bottom" id="Services" order="6" weight="0.314438" />
+      <window_info anchor="bottom" id="Services" order="6" weight="0.32994187" />
       <window_info anchor="bottom" id="Database Changes" order="7" weight="0.314438" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32994187" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
       <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" weight="0.23723958" />
-      <window_info anchor="right" id="Gradle" order="3" weight="0.17109375" />
+      <window_info anchor="right" id="Database" order="2" weight="0.32994792" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.3303758" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
     </layout>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.StellarSync [build]">
     <configuration name="StellarSync [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,9 +173,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="StellarSync [runServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runServer" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.StellarSync [build]" />
+        <item itemvalue="Gradle.StellarSync [runServer]" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +222,10 @@
       <workItem from="1742048953960" duration="6521000" />
       <workItem from="1742113689509" duration="22151000" />
       <workItem from="1742222854359" duration="3740000" />
-      <workItem from="1742310405444" duration="1396000" />
+      <workItem from="1742310405444" duration="1684000" />
+      <workItem from="1742801322961" duration="19977000" />
+      <workItem from="1742826382593" duration="1007000" />
+      <workItem from="1742992324365" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更">
       <option name="closed" value="true" />
@@ -238,7 +267,47 @@
       <option name="project" value="LOCAL" />
       <updated>1742311662010</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remove: 不要なgradle関係のファイルを削除">
+      <option name="closed" value="true" />
+      <created>1742311837589</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311837589</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add: commonへの依存関係を追加">
+      <option name="closed" value="true" />
+      <created>1742311858620</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311858620</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add: PaperのMessageFormatterを追加">
+      <option name="closed" value="true" />
+      <created>1742311874503</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311874503</updated>
+    </task>
+    <task id="LOCAL-00009" summary="change: プロジェクト構造を変更">
+      <option name="closed" value="true" />
+      <created>1742311892761</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742311892761</updated>
+    </task>
+    <task id="LOCAL-00010" summary="rename: メインクラスの名前を変更">
+      <option name="closed" value="true" />
+      <created>1742312072656</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742312072656</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +330,12 @@
     <MESSAGE value="add: メッセージの共通化用モデルを追加" />
     <MESSAGE value="others: モジュール構造などを変更" />
     <MESSAGE value="add: messageFormatterの初期化処理を追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: messageFormatterの初期化処理を追加" />
+    <MESSAGE value="remove: 不要なgradle関係のファイルを削除" />
+    <MESSAGE value="add: commonへの依存関係を追加" />
+    <MESSAGE value="add: PaperのMessageFormatterを追加" />
+    <MESSAGE value="change: プロジェクト構造を変更" />
+    <MESSAGE value="rename: メインクラスの名前を変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename: メインクラスの名前を変更" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
