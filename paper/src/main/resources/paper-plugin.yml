@@ -4,3 +4,9 @@ main: dev.mnyacat.stellar_sync_paper.StellarSyncPaper
 api-version: '1.21'
 prefix: StellarSync
 load: STARTUP
+dependencies:
+  server:
+    NBTAPI:
+      load: BEFORE
+      required: true
+      join-classpath: true

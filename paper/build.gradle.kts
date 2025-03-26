@@ -14,6 +14,10 @@ repositories {
     maven("https://oss.sonatype.org/content/groups/public/") {
         name = "sonatype"
     }
+    maven {
+        name = "CodeMC"
+        url = uri("https://repo.codemc.io/repository/maven-public/")
+    }
 }
 
 dependencies {
@@ -21,6 +25,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     implementation(project(":common"))
+    compileOnly("de.tr7zw:item-nbt-api-plugin:2.14.1")
 }
 
 val targetJavaVersion = 21
