@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="rename: メインクラスの名前を変更">
-      <change afterPath="$PROJECT_DIR$/paper/src/main/kotlin/dev/mnyacat/stellar_sync_paper/Util.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="add: PaperのContextを実装">
       <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/ConnectionManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/ConnectionManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/paper/build.gradle.kts" afterDir="false" />
@@ -123,8 +121,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23828125" />
-      <window_info id="Commit" order="1" weight="0.23723958" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17161459" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.17161459" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.33046874" />
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Profiler" show_stripe_button="false" />
@@ -225,7 +223,7 @@
       <workItem from="1742310405444" duration="1684000" />
       <workItem from="1742801322961" duration="19977000" />
       <workItem from="1742826382593" duration="1007000" />
-      <workItem from="1742992324365" duration="5000" />
+      <workItem from="1742992324365" duration="533000" />
     </task>
     <task id="LOCAL-00001" summary="change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更">
       <option name="closed" value="true" />
@@ -307,7 +305,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742312072656</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="other: ideaの変更">
+      <option name="closed" value="true" />
+      <created>1742992688819</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742992688819</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add: PaperのStorageWrapperを実装">
+      <option name="closed" value="true" />
+      <created>1742992838816</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742992838816</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add: PaperのContextを実装">
+      <option name="closed" value="true" />
+      <created>1742992852394</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742992852394</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +357,10 @@
     <MESSAGE value="add: PaperのMessageFormatterを追加" />
     <MESSAGE value="change: プロジェクト構造を変更" />
     <MESSAGE value="rename: メインクラスの名前を変更" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename: メインクラスの名前を変更" />
+    <MESSAGE value="other: ideaの変更" />
+    <MESSAGE value="add: PaperのStorageWrapperを実装" />
+    <MESSAGE value="add: PaperのContextを実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: PaperのContextを実装" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
