@@ -16,6 +16,10 @@ abstract class Storage<Player>(
     protected val scheduler: ScheduledExecutorService,
     protected val attempts: MutableMap<UUID, Int>
 ) {
+    fun close() {
+        connectionManager.close()
+    }
+
     protected fun delayTask(task: Runnable, delay: Long, timeUnit: TimeUnit) {
         scheduler.schedule(task, delay, timeUnit)
     }
