@@ -2,6 +2,7 @@ package dev.mnyacat.stellar_sync_common.storage
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
+import org.postgresql.Driver
 import java.sql.Connection
 
 class ConnectionManager(
@@ -19,6 +20,7 @@ class ConnectionManager(
             this.username = username
             this.password = password
             this.maximumPoolSize = maximumPoolSize
+            this.driverClassName = Driver::class.java.name
         }
         dataSource = HikariDataSource(config)
     }
@@ -27,7 +29,7 @@ class ConnectionManager(
         return dataSource.connection
     }
 
-    fun shutdown() {
+    fun close() {
         dataSource.close()
     }
 }
