@@ -25,7 +25,6 @@ abstract class StorageWrapper<Player, MessageFormat>(
     scheduler,
     attempts
 ) {
-
     fun savePlayerData(
         player: Player,
         isOnline: Boolean,
