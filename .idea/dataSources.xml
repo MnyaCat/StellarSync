@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="stellar_dev@localhost" uuid="577a67f0-e3e6-417b-b807-d0a169b3c85f">
+    <data-source source="LOCAL" name="stellar_dev@localhost" uuid="8cc3c9e7-2eb1-449b-b199-b91875eb122c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

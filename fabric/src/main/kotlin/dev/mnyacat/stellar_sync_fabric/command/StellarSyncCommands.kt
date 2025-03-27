@@ -2,7 +2,7 @@ package dev.mnyacat.stellar_sync_fabric.command
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.StringArgumentType
-import dev.mnyacat.stellar_sync_fabric.model.FabricHolder
+import dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.minecraft.command.CommandRegistryAccess
@@ -31,7 +31,7 @@ class StellarSyncCommands(private val logger: Logger) : ModInitializer {
                                                 val rollbackServer =
                                                     StringArgumentType.getString(context, "rollback_server")
                                                 try {
-                                                    FabricHolder.storageWrapper.updateAllPlayersRollbackStatus(
+                                                    FabricStorageContext.storageWrapper.updateAllPlayersRollbackStatus(
                                                         true,
                                                         rollbackServer
                                                     )
@@ -67,7 +67,7 @@ class StellarSyncCommands(private val logger: Logger) : ModInitializer {
                                                         val playerNames =
                                                             players.map { player -> player.name }.joinToString(", ")
                                                         try {
-                                                            FabricHolder.storageWrapper.updateRollbackStatus(
+                                                            FabricStorageContext.storageWrapper.updateRollbackStatus(
                                                                 players,
                                                                 true,
                                                                 rollbackServer
@@ -98,7 +98,7 @@ class StellarSyncCommands(private val logger: Logger) : ModInitializer {
                             ).then(
                                 CommandManager.literal("disable").executes({ context ->
                                     try {
-                                        FabricHolder.storageWrapper.updateAllPlayersRollbackStatus(false, null)
+                                        FabricStorageContext.storageWrapper.updateAllPlayersRollbackStatus(false, null)
                                         context.source.sendFeedback(
                                             { Text.literal("全てのプレイヤーのロールバックサーバーの設定を解除しました.") },
                                             false
@@ -129,7 +129,7 @@ class StellarSyncCommands(private val logger: Logger) : ModInitializer {
                                                 val playerNames =
                                                     players.map { player -> player.name }.joinToString(", ")
                                                 try {
-                                                    FabricHolder.storageWrapper.updateRollbackStatus(
+                                                    FabricStorageContext.storageWrapper.updateRollbackStatus(
                                                         players,
                                                         false,
                                                         null
