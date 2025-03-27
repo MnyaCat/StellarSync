@@ -40,6 +40,7 @@ class PaperStorageWrapper(
         return player.name
     }
 
+    /// ref: https://github.com/pugur523/MySQL_PlayerdataSync-4-Paper/blob/84736968c7ee7e0f8acda14b4fe3793fb8a7883f/src/main/java/com/pugur/playerdatasync/MySQLPlayerdataSync.java#L226
     override fun getInventoryString(player: Player): String {
         val inventory = player.inventory
         val jsonInventory = inventory.toNbtString()
@@ -69,6 +70,7 @@ class PaperStorageWrapper(
         player.sendMessage(message)
     }
 
+    /// ref: https://github.com/pugur523/MySQL_PlayerdataSync-4-Paper/blob/84736968c7ee7e0f8acda14b4fe3793fb8a7883f/src/main/java/com/pugur/playerdatasync/MySQLPlayerdataSync.java#L261
     override fun loadInventory(player: Player, inventory: String) {
         val formattedInventory = inventory
             .replace("Slot:100","Slot:36")
@@ -99,6 +101,7 @@ class PaperStorageWrapper(
         player.inventory.clear()
     }
 
+    /// ref: https://github.com/pugur523/MySQL_PlayerdataSync-4-Paper/blob/84736968c7ee7e0f8acda14b4fe3793fb8a7883f/src/main/java/com/pugur/playerdatasync/MySQLPlayerdataSync.java#L247
     fun formatInventory(inventory: String): String {
         try {
             val beginIndex = inventory.indexOf("[")
