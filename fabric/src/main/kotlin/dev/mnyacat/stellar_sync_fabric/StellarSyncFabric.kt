@@ -62,13 +62,13 @@ class StellarSyncFabric : ModInitializer {
         DatabaseMigrator.migrate(logger, connectionManager)
         FabricGlobalContext.messageFormatter = FabricMessageFormatter()
         // register command
-        val commands = StellarSyncCommands(logger)
-        commands.onInitialize()
+        /*val commands = StellarSyncCommands(logger)
+        commands.onInitialize()*/
         if (config.debugMode) {
             setDebugLevel(logger)
-            val debugCommands =
+            /*val debugCommands =
                 StellarSyncDebugCommands(logger)
-            debugCommands.onInitialize()
+            debugCommands.onInitialize()*/
         }
         // MODを有効化
         FabricGlobalContext.pluginEnable = true

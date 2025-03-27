@@ -64,7 +64,6 @@ class StellarSyncPaper : JavaPlugin() {
         if (config.debugMode) {
             setDebugLevel(logger)
         }
-        // register command
         PaperGlobalContext.pluginEnable = true
         server.pluginManager.registerEvents(PlayerEventListener(), this)
     }
