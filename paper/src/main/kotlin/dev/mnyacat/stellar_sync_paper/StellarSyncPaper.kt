@@ -69,5 +69,6 @@ class StellarSyncPaper : JavaPlugin() {
         for (player in Bukkit.getOnlinePlayers()) {
             PaperStorageContext.storageWrapper.savePlayerData(player, false)
         }
+        PaperStorageContext.storageWrapper.close()
     }
 }
