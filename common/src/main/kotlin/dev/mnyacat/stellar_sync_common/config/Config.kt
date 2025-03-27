@@ -8,7 +8,8 @@ data class Config(
     @Comment("Config version. Do not change this")
     val configVersion: String = "1.0",
     val database: DatabaseConfig = DatabaseConfig(),
-    val syncOptions: SyncOptions = SyncOptions()
+    val syncOptions: SyncOptions = SyncOptions(),
+    val debugMode: Boolean = false
 ) {
     companion object {
         @ConfigSerializable
