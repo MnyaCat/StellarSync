@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"a0fdcb88-55f1-4346-a7c7-4411ba07172c\" name=\"変更\" comment=\"change: プレイヤーデータの保存、読み込み処理を共通化\">\n      <change afterPath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricStorageContext.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/codeStyles/Project.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/gradle.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/gradle.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/kotlinc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/kotlinc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/uiDesigner.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/build.gradle.kts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/paper/build.gradle.kts\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.jar\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.properties\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/gradlew\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/gradlew.bat\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/paper/settings.gradle.kts\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ChangesViewManager\">\n    <option name=\"groupingKeys\">\n      <option value=\"directory\" />\n    </option>\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"StellarSync\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"StellarSync\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"StellarSync\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n                <item name=\"build\" type=\"c8890929:TasksNode$1\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;MnyaCat&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;git@github.com:MnyaCat/StellarSync.git&quot;,\n    &quot;accountId&quot;: &quot;3e3e0668-1141-4875-8f2c-bdc937909993&quot;\n  }\n}</component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"DEPENDENCY_CHECKER_PROBLEMS_TAB\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2uJN5QS6m1NyByaajAErzCjHRCm\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Gradle.StellarSync [build].executor&quot;: &quot;Run&quot;,\n    &quot;Gradle.StellarSync [runServer].executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;fabric&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  },\n  &quot;keyToStringList&quot;: {\n    &quot;DatabaseDriversLRU&quot;: [\n      &quot;postgresql&quot;\n    ]\n  }\n}</component>\n  <component name=\"RdControllerToolWindowsLayoutState\" isNewUi=\"true\">\n    <layout>\n      <window_info id=\"Bookmarks\" side_tool=\"true\" />\n      <window_info id=\"Merge Requests\" show_stripe_button=\"false\" />\n      <window_info id=\"Commit_Guest\" show_stripe_button=\"false\" />\n      <window_info id=\"Pull Requests\" />\n      <window_info id=\"Learn\" show_stripe_button=\"false\" />\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" weight=\"0.32994792\" />\n      <window_info active=\"true\" id=\"Commit\" order=\"1\" visible=\"true\" weight=\"0.23723958\" />\n      <window_info id=\"Structure\" order=\"2\" side_tool=\"true\" weight=\"0.5289062\" />\n      <window_info anchor=\"bottom\" id=\"TypeScript\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Profiler\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Build\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" />\n      <window_info anchor=\"bottom\" id=\"Find Mixins\" />\n      <window_info anchor=\"bottom\" id=\"File Transfer\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"0\" />\n      <window_info anchor=\"bottom\" id=\"Problems\" order=\"1\" />\n      <window_info anchor=\"bottom\" id=\"Problems View\" order=\"2\" weight=\"0.2999031\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"3\" weight=\"0.2999031\" />\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"4\" weight=\"0.2999031\" />\n      <window_info anchor=\"bottom\" id=\"Duplicates\" order=\"5\" weight=\"0.3302619\" />\n      <window_info anchor=\"bottom\" id=\"Services\" order=\"6\" weight=\"0.314438\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"7\" weight=\"0.314438\" />\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"8\" weight=\"0.32994187\" />\n      <window_info anchor=\"right\" id=\"Endpoints\" show_stripe_button=\"false\" />\n      <window_info anchor=\"right\" id=\"Coverage\" show_stripe_button=\"false\" side_tool=\"true\" />\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Notifications\" order=\"0\" weight=\"0.25\" />\n      <window_info anchor=\"right\" id=\"AIAssistant\" order=\"1\" weight=\"0.25\" />\n      <window_info anchor=\"right\" id=\"Database\" order=\"2\" weight=\"0.23723958\" />\n      <window_info anchor=\"right\" id=\"Gradle\" order=\"3\" weight=\"0.17109375\" />\n      <window_info anchor=\"right\" id=\"Maven\" order=\"4\" weight=\"0.25\" />\n    </layout>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"StellarSync [build]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"build\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <RunAsTest>false</RunAsTest>\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Gradle.StellarSync [build]\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"アプリケーションレベル\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"デフォルトタスク\">\n      <changelist id=\"a0fdcb88-55f1-4346-a7c7-4411ba07172c\" name=\"変更\" comment=\"\" />\n      <created>1741962534022</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1741962534022</updated>\n      <workItem from=\"1741962536744\" duration=\"203000\" />\n      <workItem from=\"1742048953960\" duration=\"6521000\" />\n      <workItem from=\"1742113689509\" duration=\"22151000\" />\n      <workItem from=\"1742222854359\" duration=\"3740000\" />\n      <workItem from=\"1742310405444\" duration=\"990000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1742311181110</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1742311181110</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"change: プレイヤーデータの保存、読み込み処理を共通化\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1742311392857</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1742311392857</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更\" />\n    <MESSAGE value=\"change: プレイヤーデータの保存、読み込み処理を共通化\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"change: プレイヤーデータの保存、読み込み処理を共通化\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 52c7c7e38f1bc56ae3a176434861e6aa742ec4cf)
++++ b/.idea/workspace.xml	(date 1742995096096)
+@@ -4,30 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="change: プレイヤーデータの保存、読み込み処理を共通化">
+-      <change afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricStorageContext.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/model/GlobalContext.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/Storage.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/kotlin/dev/mnyacat/stellar_sync_common/storage/StorageWrapper.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/StellarSyncFabric.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/model/FabricGlobalContext.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/kotlin/dev/mnyacat/stellar_sync_fabric/storage/FabricStorageWrapper.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/paper/build.gradle.kts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/gradlew" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/gradlew.bat" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/paper/settings.gradle.kts" beforeDir="false" />
+-    </list>
++    <list default="true" id="a0fdcb88-55f1-4346-a7c7-4411ba07172c" name="変更" comment="fix: PaperでJDBCドライバーが読み込めない問題を修正" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -82,6 +59,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="common" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -136,7 +118,7 @@
+       <window_info id="Pull Requests" />
+       <window_info id="Learn" show_stripe_button="false" />
+       <window_info content_ui="combo" id="Project" order="0" weight="0.32994792" />
+-      <window_info active="true" id="Commit" order="1" visible="true" weight="0.23723958" />
++      <window_info active="true" id="Commit" order="1" visible="true" weight="0.17161459" />
+       <window_info id="Structure" order="2" side_tool="true" weight="0.5289062" />
+       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
+       <window_info anchor="bottom" id="Profiler" show_stripe_button="false" />
+@@ -238,7 +220,8 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="change: StorageWrapperをGlobalContextではなく専用のcontextで保持するように変更" />
+     <MESSAGE value="change: プレイヤーデータの保存、読み込み処理を共通化" />
+-    <option name="LAST_COMMIT_MESSAGE" value="change: プレイヤーデータの保存、読み込み処理を共通化" />
++    <MESSAGE value="fix: PaperでJDBCドライバーが読み込めない問題を修正" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix: PaperでJDBCドライバーが読み込めない問題を修正" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: .idea/codeStyles/Project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/Project.xml b/.idea/codeStyles/Project.xml
+new file mode 100644
+--- /dev/null	(date 1742995096106)
++++ b/.idea/codeStyles/Project.xml	(date 1742995096106)
+@@ -0,0 +1,10 @@
++<component name="ProjectCodeStyleConfiguration">
++  <code_scheme name="Project" version="173">
++    <JetCodeStyleSettings>
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </JetCodeStyleSettings>
++    <codeStyleSettings language="kotlin">
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </codeStyleSettings>
++  </code_scheme>
++</component>
+\ No newline at end of file
+Index: .idea/codeStyles/codeStyleConfig.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/codeStyleConfig.xml b/.idea/codeStyles/codeStyleConfig.xml
+new file mode 100644
+--- /dev/null	(date 1742995096116)
++++ b/.idea/codeStyles/codeStyleConfig.xml	(date 1742995096116)
+@@ -0,0 +1,5 @@
++<component name="ProjectCodeStyleConfiguration">
++  <state>
++    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
++  </state>
++</component>
+\ No newline at end of file

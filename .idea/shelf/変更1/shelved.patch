@@ -1,0 +1,21 @@
+Index: fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dev.mnyacat.stellar_sync_fabric.mixin;\n\nimport dev.mnyacat.stellar_sync_fabric.model.FabricGlobalContext;\nimport dev.mnyacat.stellar_sync_fabric.model.FabricStorageContext;\nimport net.minecraft.network.ClientConnection;\nimport net.minecraft.server.PlayerManager;\nimport net.minecraft.server.network.ConnectedClientData;\nimport net.minecraft.server.network.ServerPlayerEntity;\nimport net.minecraft.text.Text;\nimport net.minecraft.util.Formatting;\nimport org.spongepowered.asm.mixin.Mixin;\nimport org.spongepowered.asm.mixin.injection.At;\nimport org.spongepowered.asm.mixin.injection.Inject;\nimport org.spongepowered.asm.mixin.injection.callback.CallbackInfo;\n\n@Mixin(PlayerManager.class)\npublic class PlayerManagerMixin {\n\n    @Inject(method = \"onPlayerConnect\", at = @At(\"TAIL\"))\n    private void onPlayerJoin(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci) {\n        // 接続時のロード処理\n        if (!FabricGlobalContext.INSTANCE.getPluginEnable()) {\n            player.sendMessage(Text.literal(\"StellarSyncが無効化されているため, プレイヤーデータの同期が行われません: サーバー管理者に問い合わせてください.\").formatted(Formatting.RED));\n            return;\n        }\n        FabricStorageContext.INSTANCE.getStorageWrapper().loadPlayerData(player, true);\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java b/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java
+--- a/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java	(revision bcdc8c4dd3ff898291453b00f44005d93396980e)
++++ b/fabric/src/main/java/dev/mnyacat/stellar_sync_fabric/mixin/PlayerManagerMixin.java	(date 1742811075595)
+@@ -19,10 +19,6 @@
+     @Inject(method = "onPlayerConnect", at = @At("TAIL"))
+     private void onPlayerJoin(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci) {
+         // 接続時のロード処理
+-        if (!FabricGlobalContext.INSTANCE.getPluginEnable()) {
+-            player.sendMessage(Text.literal("StellarSyncが無効化されているため, プレイヤーデータの同期が行われません: サーバー管理者に問い合わせてください.").formatted(Formatting.RED));
+-            return;
+-        }
+         FabricStorageContext.INSTANCE.getStorageWrapper().loadPlayerData(player, true);
+ 
+     }
