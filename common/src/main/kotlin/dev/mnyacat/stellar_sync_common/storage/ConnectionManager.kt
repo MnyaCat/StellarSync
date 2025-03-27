@@ -29,7 +29,7 @@ class ConnectionManager(
         return dataSource.connection
     }
 
-    fun shutdown() {
+    fun close() {
         dataSource.close()
     }
 }
