@@ -1,6 +1,7 @@
 package dev.mnyacat.stellar_sync_paper
 
 import dev.mnyacat.stellar_sync_common.config.ConfigManager
+import dev.mnyacat.stellar_sync_common.setDebugLevel
 import dev.mnyacat.stellar_sync_common.storage.ConnectionManager
 import dev.mnyacat.stellar_sync_common.storage.DatabaseInitializer
 import dev.mnyacat.stellar_sync_common.storage.DatabaseMigrator
@@ -60,6 +61,9 @@ class StellarSyncPaper : JavaPlugin() {
         DatabaseInitializer.initialize(logger, connectionManager)
         DatabaseMigrator.migrate(logger, connectionManager)
         PaperGlobalContext.messageFormatter = PaperMessageFormatter()
+        if (config.debugMode) {
+            setDebugLevel(logger)
+        }
         // register command
         PaperGlobalContext.pluginEnable = true
         server.pluginManager.registerEvents(PlayerEventListener(), this)

@@ -1,6 +1,7 @@
 package dev.mnyacat.stellar_sync_fabric
 
 import dev.mnyacat.stellar_sync_common.config.ConfigManager
+import dev.mnyacat.stellar_sync_common.setDebugLevel
 import dev.mnyacat.stellar_sync_common.storage.ConnectionManager
 import dev.mnyacat.stellar_sync_common.storage.DatabaseInitializer
 import dev.mnyacat.stellar_sync_common.storage.DatabaseMigrator
@@ -61,11 +62,14 @@ class StellarSyncFabric : ModInitializer {
         DatabaseMigrator.migrate(logger, connectionManager)
         FabricGlobalContext.messageFormatter = FabricMessageFormatter()
         // register command
-        val debugCommands =
-            StellarSyncDebugCommands(logger)
-        debugCommands.onInitialize()
         val commands = StellarSyncCommands(logger)
         commands.onInitialize()
+        if (config.debugMode) {
+            setDebugLevel(logger)
+            val debugCommands =
+                StellarSyncDebugCommands(logger)
+            debugCommands.onInitialize()
+        }
         // MODを有効化
         FabricGlobalContext.pluginEnable = true
     }
