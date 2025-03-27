@@ -15,6 +15,10 @@ abstract class Storage<Player>(
     protected val scheduler: ScheduledExecutorService,
     protected val attempts: MutableMap<UUID, Int>
 ) {
+    fun close() {
+        connectionManager.close()
+    }
+
     abstract fun savePlayerData(
         player: Player,
         isOnline: Boolean,
