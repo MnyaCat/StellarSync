@@ -1,6 +1,6 @@
 # StellarSync
 
-複数のMinecraftサーバ間でプレイヤーデータを同期するFabric MOD / Paper プラグイン。
+複数のMinecraftサーバー間でプレイヤーデータを同期するFabricMOD / Paperプラグイン。
 
 ## 概要
 
