@@ -15,6 +15,9 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/**/workspace.xml
+.idea/**/statistics.xml
+.idea/**/tasks.xml
 
 ### Kotlin ###
 .kotlin
