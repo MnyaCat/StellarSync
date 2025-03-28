@@ -6,6 +6,10 @@ plugins {
 group = "dev.mnyacat"
 version = "1.0-SNAPSHOT"
 
+base {
+    archivesName.set("StellarSync-Paper")
+}
+
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/") {
