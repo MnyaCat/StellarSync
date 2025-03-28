@@ -54,6 +54,10 @@ sync-options: # 同期する項目の設定
 debug-mode: false # debugログを有効にするか
 ```
 
+## ビルド
+
+リポジトリをクローンし、`./gradlew build`を実行してください。
+
 ## 参考
 
 本プロジェクトは、[pugur](https://github.com/pugur523)氏の[MySQL Playerdata Sync for Fabric](https://github.com/pugur523/MySQL_PlayerdataSync-4-Fabric)を参考にしました。
