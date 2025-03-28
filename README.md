@@ -31,6 +31,10 @@
 - ロールバックへの対応
 - 同期できるデータの追加
 
+## 参考
+
+本プロジェクトは、[pugur](https://github.com/pugur523)氏の[MySQL Playerdata Sync](https://github.com/pugur523/MySQL_PlayerdataSync)を参考にしました。
+
 ## LICENSE
 
 Copyright (c) 2025 MnyaCat
