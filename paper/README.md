@@ -18,9 +18,13 @@
 - 経験値(レベル)
 - 実績
 
-## インストール / 要件
+## 前提プラグイン / 要件
+
+- [NBT-API](https://modrinth.com/plugin/nbtapi): 2.14.1
 
 このMODの利用にはPostgreSQLが必要です。予めセットアップしてください。
+
+## インストール
 
 1. サーバーの`plugins`フォルダに`StellarSync-Paper-<version>.jar`を配置
 2. 一度サーバーを起動し、設定ファイルを生成する(`plugins/StellarSync/StellarSync.yaml`に生成されます)

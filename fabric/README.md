@@ -18,9 +18,14 @@
 - 経験値(レベル)
 - 実績
 
-## インストール / 要件
+## 前提MOD / 要件
+
+- [Fabric API](https://modrinth.com/mod/fabric-api): >=0.115.1+1.21.4
+- [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin): >=1.13.1+kotlin.2.1.10
 
 このMODの利用にはPostgreSQLが必要です。予めセットアップしてください。
+
+## インストール
 
 1. サーバーの`mods`フォルダに`StellarSync-Fabric-<version>.jar`を配置
 2. 一度サーバーを起動し、設定ファイルを生成する(`config/StellarSync.yaml`に生成されます)
