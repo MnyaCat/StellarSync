@@ -1,10 +1,10 @@
 # StellarSync
 
-複数のMinecraftサーバー間でプレイヤーデータを同期するFabricMOD。
+複数のMinecraftサーバー間でプレイヤーデータを同期するPaperプラグイン。
 
 ## 概要
 
-複数のMinecraftサーバーでインベントリ等をPostgreSQLを介して同期するFabricMODです。
+複数のMinecraftサーバーでインベントリ等をPostgreSQLを介して同期するPaperプラグインです。
 現在、以下のプレイヤーデータを共有できます。
 
 - インベントリ(装備などを含む)
@@ -18,17 +18,16 @@
 - 経験値(レベル)
 - 実績
 
-## 前提MOD / 要件
+## 前提プラグイン / 要件
 
-- [Fabric API](https://modrinth.com/mod/fabric-api): >=0.115.1+1.21.4
-- [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin): >=1.13.1+kotlin.2.1.10
+- [NBT-API](https://modrinth.com/plugin/nbtapi): 2.14.1
 
 このMODの利用にはPostgreSQLが必要です。予めセットアップしてください。
 
 ## インストール
 
-1. サーバーの`mods`フォルダに`StellarSync-Fabric-<version>.jar`を配置
-2. 一度サーバーを起動し、設定ファイルを生成する(`config/StellarSync.yaml`に生成されます)
+1. サーバーの`plugins`フォルダに`StellarSync-Paper-<version>.jar`を配置
+2. 一度サーバーを起動し、設定ファイルを生成する(`plugins/StellarSync/StellarSync.yaml`に生成されます)
 3. サーバーを停止し、設定ファイルにPostgreSQLの接続情報を書き込む
 4. サーバーを起動する
 
@@ -43,7 +42,7 @@ database:
 
 ## 設定
 
-パスは`config/StellarSync.yaml`です。
+パスは`plugins/StellarSync/StellarSync.yaml`です。
 
 ```yaml
 config-version: '1.0' # メタ情報 変更しないでください
@@ -65,7 +64,7 @@ debug-mode: false # debugログを有効にするか
 
 ## 参考
 
-本プロジェクトは、[pugur](https://github.com/pugur523)氏の[MySQL Playerdata Sync for Fabric](https://github.com/pugur523/MySQL_PlayerdataSync-4-Fabric)を参考にしました。
+本プロジェクトは、[pugur](https://github.com/pugur523)氏の[MySQL Playerdata Sync for Paper](https://github.com/pugur523/MySQL_PlayerdataSync-4-Paper)を参考にしました。
 
 ## LICENSE
 

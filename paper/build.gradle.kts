@@ -1,10 +1,18 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
     kotlin("jvm") version "2.1.0"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
+val MOD_VERSION: String by rootProject.extra
+
 group = "dev.mnyacat"
-version = "1.0-SNAPSHOT"
+version = MOD_VERSION
+
+base {
+    archivesName.set("StellarSync-Paper")
+}
 
 repositories {
     mavenCentral()
@@ -44,4 +52,10 @@ tasks.processResources {
     filesMatching("paper-plugin.yml") {
         expand(props)
     }
+}
+
+tasks.named<ShadowJar>("shadowJar") {
+    archiveBaseName.set("StellarSync-Paper")
+    archiveClassifier.set("") // "all" を消す
+    archiveVersion.set(project.version.toString())
 }
