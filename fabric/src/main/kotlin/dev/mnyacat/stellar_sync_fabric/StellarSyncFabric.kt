@@ -56,6 +56,7 @@ class StellarSyncFabric : ModInitializer {
             5,
             50L,
             Executors.newScheduledThreadPool(1),
+            ConcurrentHashMap<UUID, Int>(),
             ConcurrentHashMap<UUID, Int>()
         )
         DatabaseInitializer.initialize(logger, connectionManager)

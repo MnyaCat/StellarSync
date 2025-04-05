@@ -19,14 +19,16 @@ class PaperStorageWrapper(
     maxRetries: Int,
     retryDelayMs: Long,
     scheduler: ScheduledExecutorService,
-    attempts: MutableMap<UUID, Int>
+    attempts: MutableMap<UUID, Int>,
+    waitedCounts: MutableMap<UUID, Int>
 ) : StorageWrapper<Player, Component>(
     logger,
     connectionManager,
     maxRetries,
     retryDelayMs,
     scheduler,
-    attempts
+    attempts,
+    waitedCounts
 ) {
     override fun getContext(): GlobalContext<Component> {
         return PaperGlobalContext
