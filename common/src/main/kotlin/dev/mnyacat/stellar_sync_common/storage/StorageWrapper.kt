@@ -173,6 +173,7 @@ abstract class StorageWrapper<Player, MessageFormat>(
                     logger.info("is_online is true, waiting for ${waitDelayMs}ms...")
                     waitedCounts[uuid] = waitedCount + 1
                     delayTask({ loadPlayerData(player) }, waitDelayMs, TimeUnit.MILLISECONDS)
+                    return
                 }
             }
             if (playerData.hasCrashed || isCrashDetected) {
