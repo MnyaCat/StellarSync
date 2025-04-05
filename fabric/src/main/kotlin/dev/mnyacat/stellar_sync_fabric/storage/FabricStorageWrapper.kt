@@ -21,7 +21,8 @@ class FabricStorageWrapper(
     maxRetries: Int,
     retryDelayMs: Long,
     scheduler: ScheduledExecutorService,
-    attempts: MutableMap<UUID, Int>
+    attempts: MutableMap<UUID, Int>,
+    waitedCounts: MutableMap<UUID, Int>
 ) :
     StorageWrapper<ServerPlayerEntity, Text>(
         logger,
@@ -29,7 +30,8 @@ class FabricStorageWrapper(
         maxRetries,
         retryDelayMs,
         scheduler,
-        attempts
+        attempts,
+        waitedCounts
     ) {
 
     override fun getContext(): GlobalContext<Text> {

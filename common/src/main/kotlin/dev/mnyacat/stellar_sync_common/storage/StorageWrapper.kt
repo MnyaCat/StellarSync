@@ -16,7 +16,10 @@ abstract class StorageWrapper<Player, MessageFormat>(
     maxRetries: Int,
     retryDelayMs: Long,
     scheduler: ScheduledExecutorService,
-    private val attempts: MutableMap<UUID, Int>
+    private val attempts: MutableMap<UUID, Int>,
+    private val waitedCounts: MutableMap<UUID, Int>,
+    private val waitDelayMs: Long = 50L,
+    private val maxWait: Int = 5
 ): Storage<Player>(
     logger,
     connectionManager,
@@ -155,14 +158,22 @@ abstract class StorageWrapper<Player, MessageFormat>(
                 }
             }
             if (playerData.isOnline) {
-                updateFlags(
-                    uuid,
-                    isOnline = false,
-                    hasCrashed = true,
-                    needsRollback = playerData.needsRollback
-                )
-                isCrashDetected = true
-                logger.info("Previous attempt to save player data failed. Marked $playerName's 'hasCrashed' flag as true.")
+                val waitedCount = waitedCounts.getOrDefault(uuid, 0)
+                if (attempt >= maxWait) {
+                    waitedCounts.remove(uuid)
+                    updateFlags(
+                        uuid,
+                        isOnline = false,
+                        hasCrashed = true,
+                        needsRollback = playerData.needsRollback
+                    )
+                    isCrashDetected = true
+                    logger.info("Previous attempt to save player data failed. Marked $playerName's 'hasCrashed' flag as true.")
+                } else {
+                    logger.info("is_online is true, waiting for ${waitDelayMs}ms...")
+                    waitedCounts[uuid] = waitedCount + 1
+                    delayTask({ loadPlayerData(player) }, waitDelayMs, TimeUnit.MILLISECONDS)
+                }
             }
             if (playerData.hasCrashed || isCrashDetected) {
                 if (playerData.lastServer == levelName) {
