@@ -16,7 +16,7 @@ abstract class StorageWrapper<Player, MessageFormat>(
     maxRetries: Int,
     retryDelayMs: Long,
     scheduler: ScheduledExecutorService,
-    val attempts: MutableMap<UUID, Int>
+    private val attempts: MutableMap<UUID, Int>
 ): Storage<Player>(
     logger,
     connectionManager,
