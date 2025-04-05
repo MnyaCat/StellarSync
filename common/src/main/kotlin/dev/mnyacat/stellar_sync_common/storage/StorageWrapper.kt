@@ -16,14 +16,13 @@ abstract class StorageWrapper<Player, MessageFormat>(
     maxRetries: Int,
     retryDelayMs: Long,
     scheduler: ScheduledExecutorService,
-    attempts: MutableMap<UUID, Int>
+    val attempts: MutableMap<UUID, Int>
 ): Storage<Player>(
     logger,
     connectionManager,
     maxRetries,
     retryDelayMs,
-    scheduler,
-    attempts
+    scheduler
 ) {
     fun savePlayerData(
         player: Player,

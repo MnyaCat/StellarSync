@@ -13,8 +13,7 @@ abstract class Storage<Player>(
     protected val connectionManager: ConnectionManager,
     protected val maxRetries: Int,
     protected val retryDelayMs: Long,
-    protected val scheduler: ScheduledExecutorService,
-    protected val attempts: MutableMap<UUID, Int>
+    protected val scheduler: ScheduledExecutorService
 ) {
     fun close() {
         connectionManager.close()
