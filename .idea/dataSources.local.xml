@@ -16,5 +16,20 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="stellar_sync@postgresql_lxc" uuid="8c1e4106-2e7d-481c-b77b-ea85df1cba36">
+      <database-info product="PostgreSQL" version="14.17 (Ubuntu 14.17-0ubuntu0.22.04.1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="14.17" exact-driver-version="42.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>stellar_sync</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>
